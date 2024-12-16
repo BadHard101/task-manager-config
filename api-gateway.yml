@@ -34,12 +34,12 @@ spring:
           uri: http://user-service.default.svc.cluster.local:8080
           predicates:
             - Path=/login/oauth2/code/**
-        - id: taskList-service
-          uri: http://taskList-service.default.svc.cluster.local:8080
+        - id: tasklist-service
+          uri: http://tasklist-service.default.svc.cluster.local:8080
           predicates:
-            - Path=/taskList-service/**
+            - Path=/tasklist-service/**
           filters:
-            - RewritePath=/taskList-service/(?<path>.*), /${path}
+            - RewritePath=/tasklist-service/(?<path>.*), /${path}
       discovery:
         locator:
           enabled: true
